@@ -9,7 +9,7 @@ func _ready():
 	pass # Replace with function body.
 	
 func _process(delta):
-	if(Input.is_action_pressed("j2_up")):
+	if(Input.is_action_pressed("j1_up")):
 		move_and_collide(Vector2.UP*speed)
-	if(Input.is_action_pressed("j2_down")):
+	if(Input.is_action_pressed("j1_down")):
 		move_and_collide(Vector2.DOWN*speed)
