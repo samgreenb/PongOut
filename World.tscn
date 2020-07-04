@@ -1,47 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Paleta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Paleta2.gd" type="Script" id=3]
-
-[sub_resource type="PhysicsMaterial" id=1]
-friction = 0.0
-bounce = 1.0
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://background.jpg" type="Texture" id=6]
 
 [node name="World" type="Node2D"]
 
-[node name="Paleta" parent="." instance=ExtResource( 1 )]
-position = Vector2( 184, 281.788 )
+[node name="Wall" type="StaticBody2D" parent="."]
 
-<<<<<<< Updated upstream
-[node name="Paleta2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 840, 281.392 )
+[node name="Sprite" type="Sprite" parent="Wall"]
+position = Vector2( 512, 304 )
+texture = ExtResource( 6 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+build_mode = 1
+polygon = PoolVector2Array( 0.090744, -1.83316, 1024, 0, 1024, 600, 0, 600 )
+
+[node name="Paleta" parent="." instance=ExtResource( 1 )]
+position = Vector2( 248, 304 )
+
+[node name="Paleta2" parent="Paleta" instance=ExtResource( 1 )]
+position = Vector2( 528, 3.05176e-05 )
 script = ExtResource( 3 )
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512, 288 )
-mass = 0.00102041
-=======
-[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2( 520, 280 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( 16, 120, 16, 16, 1008, 16, 1008, 584, 16, 584, 16, 280, 16, 144, 16, 120, -80, -8, -72, 616, 1104, 616, 1064, -40, -32, -32 )
-
-[node name="Ball" parent="." instance=ExtResource( 2 )]
-position = Vector2( 504, 288 )
->>>>>>> Stashed changes
-physics_material_override = SubResource( 1 )
-linear_damp = 0.0
-
-[node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
-position = Vector2( 16, 16 )
-scale = Vector2( 1.00189, 1.00237 )
-build_mode = 1
-polygon = PoolVector2Array( -13.4352, -14.0925, -13.4352, 584.487, 1008.63, 584.487, 1008.63, -14.0925 )
-one_way_collision_margin = 0.0
+[node name="Brick" parent="." instance=ExtResource( 4 )]
 
 [editable path="Paleta"]
-
-[editable path="Paleta2"]
