@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Paleta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Paleta2.gd" type="Script" id=3]
 [ext_resource path="res://Brick.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ladrillo.jpg" type="Texture" id=5]
-[ext_resource path="res://background.jpg" type="Texture" id=6]
+[ext_resource path="res://Sprites/background.jpg" type="Texture" id=5]
 [ext_resource path="res://Porteria.gd" type="Script" id=7]
 [ext_resource path="res://Porteria2.gd" type="Script" id=8]
 
@@ -20,789 +19,33 @@ extents = Vector2( 10, 344 )
 [node name="Wall" type="StaticBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Wall"]
-position = Vector2( 512, 298 )
-scale = Vector2( 1, 0.993333 )
-texture = ExtResource( 6 )
+position = Vector2( 512, 300 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
-position = Vector2( 0, -8 )
+position = Vector2( 0, 9.15527e-05 )
 build_mode = 1
 polygon = PoolVector2Array( 0.090744, -1.83316, 1024, 0, 1024, 600, 0, 600 )
 
 [node name="Paleta" parent="." instance=ExtResource( 1 )]
-position = Vector2( 248, 320 )
+position = Vector2( 295.908, 320 )
 
 [node name="Sprite" parent="Paleta" index="0"]
-frame = 0
+frame = 1
 
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 728, 320 )
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="Paleta2" index="0"]
-frame = 0
+frame = 1
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 328, 320 )
-
-[node name="Brick" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 48 )
-
-[node name="Sprite" parent="Brick" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick" index="1"]
-rotation = -4.71238
-
-[node name="Brick2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 112 )
-
-[node name="Sprite" parent="Brick2" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick2" index="1"]
-rotation = -4.71238
-
-[node name="Brick3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 176 )
-
-[node name="Sprite" parent="Brick3" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick3" index="1"]
-rotation = -4.71238
-
-[node name="Brick4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 240 )
-
-[node name="Sprite" parent="Brick4" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick4" index="1"]
-rotation = -4.71238
-
-[node name="Brick5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 304 )
-
-[node name="Sprite" parent="Brick5" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick5" index="1"]
-rotation = -4.71238
-
-[node name="Brick6" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 368 )
-
-[node name="Sprite" parent="Brick6" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick6" index="1"]
-rotation = -4.71238
-
-[node name="Brick7" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 432 )
-
-[node name="Sprite" parent="Brick7" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick7" index="1"]
-rotation = -4.71238
-
-[node name="Brick8" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 496 )
-
-[node name="Sprite" parent="Brick8" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick8" index="1"]
-rotation = -4.71238
-
-[node name="Brick9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 184, 560 )
-
-[node name="Sprite" parent="Brick9" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick9" index="1"]
-rotation = -4.71238
-
-[node name="Brick10" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 48 )
-
-[node name="Sprite" parent="Brick10" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick10" index="1"]
-rotation = -4.71238
-
-[node name="Brick11" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 112 )
-
-[node name="Sprite" parent="Brick11" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick11" index="1"]
-rotation = -4.71238
-
-[node name="Brick12" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 176 )
-
-[node name="Sprite" parent="Brick12" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick12" index="1"]
-rotation = -4.71238
-
-[node name="Brick13" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 240 )
-
-[node name="Sprite" parent="Brick13" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick13" index="1"]
-rotation = -4.71238
-
-[node name="Brick14" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 304 )
-
-[node name="Sprite" parent="Brick14" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick14" index="1"]
-rotation = -4.71238
-
-[node name="Brick15" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 368 )
-
-[node name="Sprite" parent="Brick15" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick15" index="1"]
-rotation = -4.71238
-
-[node name="Brick16" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 432 )
-
-[node name="Sprite" parent="Brick16" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick16" index="1"]
-rotation = -4.71238
-
-[node name="Brick17" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 496 )
-
-[node name="Sprite" parent="Brick17" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick17" index="1"]
-rotation = -4.71238
-
-[node name="Brick18" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 560 )
-
-[node name="Sprite" parent="Brick18" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick18" index="1"]
-rotation = -4.71238
-
-[node name="Brick19" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 48 )
-
-[node name="Sprite" parent="Brick19" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick19" index="1"]
-rotation = -4.71238
-
-[node name="Brick20" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 112 )
-
-[node name="Sprite" parent="Brick20" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick20" index="1"]
-rotation = -4.71238
-
-[node name="Brick21" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 176 )
-
-[node name="Sprite" parent="Brick21" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick21" index="1"]
-rotation = -4.71238
-
-[node name="Brick22" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 240 )
-
-[node name="Sprite" parent="Brick22" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick22" index="1"]
-rotation = -4.71238
-
-[node name="Brick23" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 304 )
-
-[node name="Sprite" parent="Brick23" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick23" index="1"]
-rotation = -4.71238
-
-[node name="Brick24" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 368 )
-
-[node name="Sprite" parent="Brick24" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick24" index="1"]
-rotation = -4.71238
-
-[node name="Brick25" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 432 )
-
-[node name="Sprite" parent="Brick25" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick25" index="1"]
-rotation = -4.71238
-
-[node name="Brick26" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 496 )
-
-[node name="Sprite" parent="Brick26" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick26" index="1"]
-rotation = -4.71238
-
-[node name="Brick27" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 560 )
-
-[node name="Sprite" parent="Brick27" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick27" index="1"]
-rotation = -4.71238
-
-[node name="Brick28" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 48 )
-
-[node name="Sprite" parent="Brick28" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick28" index="1"]
-rotation = -4.71238
-
-[node name="Brick29" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 112 )
-
-[node name="Sprite" parent="Brick29" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick29" index="1"]
-rotation = -4.71238
-
-[node name="Brick30" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 176 )
-
-[node name="Sprite" parent="Brick30" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick30" index="1"]
-rotation = -4.71238
-
-[node name="Brick31" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 240 )
-
-[node name="Sprite" parent="Brick31" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick31" index="1"]
-rotation = -4.71238
-
-[node name="Brick32" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 304 )
-
-[node name="Sprite" parent="Brick32" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick32" index="1"]
-rotation = -4.71238
-
-[node name="Brick33" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 368 )
-
-[node name="Sprite" parent="Brick33" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick33" index="1"]
-rotation = -4.71238
-
-[node name="Brick34" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 432 )
-
-[node name="Sprite" parent="Brick34" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick34" index="1"]
-rotation = -4.71238
-
-[node name="Brick35" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 496 )
-
-[node name="Sprite" parent="Brick35" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick35" index="1"]
-rotation = -4.71238
-
-[node name="Brick36" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112, 560 )
-
-[node name="Sprite" parent="Brick36" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick36" index="1"]
-rotation = -4.71238
-
-[node name="Brick37" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 48 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick37" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick37" index="1"]
-rotation = -4.71238
-
-[node name="Brick38" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 112 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick38" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick38" index="1"]
-rotation = -4.71238
-
-[node name="Brick39" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 176 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick39" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick39" index="1"]
-rotation = -4.71238
-
-[node name="Brick40" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 240 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick40" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick40" index="1"]
-rotation = -4.71238
-
-[node name="Brick41" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 304 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick41" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick41" index="1"]
-rotation = -4.71238
-
-[node name="Brick42" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 368 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick42" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick42" index="1"]
-rotation = -4.71238
-
-[node name="Brick43" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 432 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick43" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick43" index="1"]
-rotation = -4.71238
-
-[node name="Brick44" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 496 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick44" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick44" index="1"]
-rotation = -4.71238
-
-[node name="Brick45" parent="." instance=ExtResource( 4 )]
-position = Vector2( 840, 560 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick45" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick45" index="1"]
-rotation = -4.71238
-
-[node name="Brick46" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 48 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick46" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick46" index="1"]
-rotation = -4.71238
-
-[node name="Brick47" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 112 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick47" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick47" index="1"]
-rotation = -4.71238
-
-[node name="Brick48" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 176 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick48" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick48" index="1"]
-rotation = -4.71238
-
-[node name="Brick49" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 240 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick49" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick49" index="1"]
-rotation = -4.71238
-
-[node name="Brick50" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 304 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick50" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick50" index="1"]
-rotation = -4.71238
-
-[node name="Brick51" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 368 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick51" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick51" index="1"]
-rotation = -4.71238
-
-[node name="Brick52" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 432 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick52" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick52" index="1"]
-rotation = -4.71238
-
-[node name="Brick53" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 496 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick53" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick53" index="1"]
-rotation = -4.71238
-
-[node name="Brick54" parent="." instance=ExtResource( 4 )]
-position = Vector2( 864, 560 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick54" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick54" index="1"]
-rotation = -4.71238
-
-[node name="Brick55" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 48 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick55" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick55" index="1"]
-rotation = -4.71238
-
-[node name="Brick56" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 112 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick56" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick56" index="1"]
-rotation = -4.71238
-
-[node name="Brick57" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 176 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick57" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick57" index="1"]
-rotation = -4.71238
-
-[node name="Brick58" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 240 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick58" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick58" index="1"]
-rotation = -4.71238
-
-[node name="Brick59" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 304 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick59" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick59" index="1"]
-rotation = -4.71238
-
-[node name="Brick60" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 368 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick60" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick60" index="1"]
-rotation = -4.71238
-
-[node name="Brick61" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 432 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick61" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick61" index="1"]
-rotation = -4.71238
-
-[node name="Brick62" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 496 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick62" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick62" index="1"]
-rotation = -4.71238
-
-[node name="Brick63" parent="." instance=ExtResource( 4 )]
-position = Vector2( 888, 560 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick63" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick63" index="1"]
-rotation = -4.71238
-
-[node name="Brick64" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 48 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick64" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick64" index="1"]
-rotation = -4.71238
-
-[node name="Brick65" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 112 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick65" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick65" index="1"]
-rotation = -4.71238
-
-[node name="Brick66" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 176 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick66" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick66" index="1"]
-rotation = -4.71238
-
-[node name="Brick67" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 240 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick67" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick67" index="1"]
-rotation = -4.71238
-
-[node name="Brick68" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 304 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick68" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick68" index="1"]
-rotation = -4.71238
-
-[node name="Brick69" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 368 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick69" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick69" index="1"]
-rotation = -4.71238
-
-[node name="Brick70" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 432 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick70" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick70" index="1"]
-rotation = -4.71238
-
-[node name="Brick71" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 496 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick71" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick71" index="1"]
-rotation = -4.71238
-
-[node name="Brick72" parent="." instance=ExtResource( 4 )]
-position = Vector2( 912, 560 )
-rotation = -3.14159
-
-[node name="Sprite" parent="Brick72" index="0"]
-scale = Vector2( 0.012003, 0.064 )
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" parent="Brick72" index="1"]
-rotation = -4.71238
 
 [node name="MedioCampo" type="Area2D" parent="."]
 collision_layer = 0
@@ -854,6 +97,298 @@ __meta__ = {
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PorteriaP2"]
 position = Vector2( 1000, 288 )
 shape = SubResource( 2 )
+
+[node name="Brick" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 48 )
+
+[node name="Sprite" parent="Brick" index="0"]
+frame = 2
+
+[node name="Brick2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 112 )
+
+[node name="Brick3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 176 )
+
+[node name="Sprite" parent="Brick3" index="0"]
+frame = 2
+
+[node name="Brick4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 240 )
+
+[node name="Brick5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 304 )
+
+[node name="Brick6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 368 )
+
+[node name="Brick7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 432 )
+
+[node name="Sprite" parent="Brick7" index="0"]
+frame = 2
+
+[node name="Brick8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 496 )
+
+[node name="Brick9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 848, 560 )
+
+[node name="Brick10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 48 )
+
+[node name="Brick11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 112 )
+
+[node name="Sprite" parent="Brick11" index="0"]
+frame = 2
+
+[node name="Brick12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 176 )
+
+[node name="Brick13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 240 )
+
+[node name="Sprite" parent="Brick13" index="0"]
+frame = 2
+
+[node name="Brick14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 304 )
+
+[node name="Brick15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 368 )
+
+[node name="Brick16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 432 )
+
+[node name="Brick17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 496 )
+
+[node name="Brick18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 880, 560 )
+
+[node name="Brick19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 864, 80 )
+
+[node name="Brick20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 864, 144 )
+
+[node name="Sprite" parent="Brick20" index="0"]
+frame = 2
+
+[node name="Brick21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 864, 208 )
+
+[node name="Brick22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 864, 272 )
+
+[node name="Sprite" parent="Brick22" index="0"]
+frame = 2
+
+[node name="Brick23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 864, 336 )
+
+[node name="Brick24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 864, 400 )
+
+[node name="Brick25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 864, 464 )
+
+[node name="Brick26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 864, 528 )
+
+[node name="Brick27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 80 )
+
+[node name="Brick28" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 144 )
+
+[node name="Brick29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 208 )
+
+[node name="Brick30" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 272 )
+
+[node name="Brick31" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 336 )
+
+[node name="Sprite" parent="Brick31" index="0"]
+frame = 0
+
+[node name="Brick32" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 400 )
+
+[node name="Brick33" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 464 )
+
+[node name="Brick34" parent="." instance=ExtResource( 4 )]
+position = Vector2( 896, 528 )
+
+[node name="Brick35" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 48 )
+rotation = 3.14159
+
+[node name="Brick36" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 112 )
+rotation = 3.14159
+
+[node name="Brick37" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 176 )
+rotation = 3.14159
+
+[node name="Brick38" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 240 )
+rotation = 3.14159
+
+[node name="Brick39" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 304 )
+rotation = 3.14159
+
+[node name="Brick40" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 368 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick40" index="0"]
+frame = 0
+
+[node name="Brick41" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 432 )
+rotation = 3.14159
+
+[node name="Brick42" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 496 )
+rotation = 3.14159
+
+[node name="Brick43" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 560 )
+rotation = 3.14159
+
+[node name="Brick44" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 48 )
+rotation = 3.14159
+
+[node name="Brick45" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 112 )
+rotation = 3.14159
+
+[node name="Brick46" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 176 )
+rotation = 3.14159
+
+[node name="Brick47" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 240 )
+rotation = 3.14159
+
+[node name="Brick48" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 304 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick48" index="0"]
+frame = 0
+
+[node name="Brick49" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 368 )
+rotation = 3.14159
+
+[node name="Brick50" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 432 )
+rotation = 3.14159
+
+[node name="Brick51" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 496 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick51" index="0"]
+frame = 0
+
+[node name="Brick52" parent="." instance=ExtResource( 4 )]
+position = Vector2( 144, 560 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick52" index="0"]
+frame = 0
+
+[node name="Brick53" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 80 )
+rotation = 3.14159
+
+[node name="Brick54" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 144 )
+rotation = 3.14159
+
+[node name="Brick55" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 208 )
+rotation = 3.14159
+
+[node name="Brick56" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 272 )
+rotation = 3.14159
+
+[node name="Brick57" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 336 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick57" index="0"]
+frame = 0
+
+[node name="Brick58" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 400 )
+rotation = 3.14159
+
+[node name="Brick59" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 464 )
+rotation = 3.14159
+
+[node name="Brick60" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 528 )
+rotation = 3.14159
+
+[node name="Brick61" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 80 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick61" index="0"]
+frame = 0
+
+[node name="Brick62" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 144 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick62" index="0"]
+frame = 0
+
+[node name="Brick63" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 208 )
+rotation = 3.14159
+
+[node name="Brick64" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 272 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick64" index="0"]
+frame = 0
+
+[node name="Brick65" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 336 )
+rotation = 3.14159
+
+[node name="Brick66" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 400 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick66" index="0"]
+frame = 2
+
+[node name="Brick67" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 464 )
+rotation = 3.14159
+
+[node name="Brick68" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 528 )
+rotation = 3.14159
+
+[node name="Sprite" parent="Brick68" index="0"]
+frame = 2
 [connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_PorteriaP1_area_entered"]
 [connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_PorteriaP2_area_entered"]
 
@@ -865,15 +400,9 @@ shape = SubResource( 2 )
 
 [editable path="Brick"]
 
-[editable path="Brick2"]
-
 [editable path="Brick3"]
 
-[editable path="Brick4"]
-
 [editable path="Brick5"]
-
-[editable path="Brick6"]
 
 [editable path="Brick7"]
 
@@ -881,85 +410,37 @@ shape = SubResource( 2 )
 
 [editable path="Brick9"]
 
-[editable path="Brick10"]
-
 [editable path="Brick11"]
-
-[editable path="Brick12"]
 
 [editable path="Brick13"]
 
-[editable path="Brick14"]
-
 [editable path="Brick15"]
-
-[editable path="Brick16"]
-
-[editable path="Brick17"]
-
-[editable path="Brick18"]
-
-[editable path="Brick19"]
 
 [editable path="Brick20"]
 
-[editable path="Brick21"]
-
 [editable path="Brick22"]
-
-[editable path="Brick23"]
 
 [editable path="Brick24"]
 
-[editable path="Brick25"]
-
 [editable path="Brick26"]
-
-[editable path="Brick27"]
-
-[editable path="Brick28"]
 
 [editable path="Brick29"]
 
-[editable path="Brick30"]
-
 [editable path="Brick31"]
-
-[editable path="Brick32"]
 
 [editable path="Brick33"]
 
-[editable path="Brick34"]
-
-[editable path="Brick35"]
-
 [editable path="Brick36"]
-
-[editable path="Brick37"]
 
 [editable path="Brick38"]
 
-[editable path="Brick39"]
-
 [editable path="Brick40"]
-
-[editable path="Brick41"]
-
-[editable path="Brick42"]
-
-[editable path="Brick43"]
 
 [editable path="Brick44"]
 
-[editable path="Brick45"]
-
 [editable path="Brick46"]
 
-[editable path="Brick47"]
-
 [editable path="Brick48"]
-
-[editable path="Brick49"]
 
 [editable path="Brick50"]
 
@@ -969,40 +450,18 @@ shape = SubResource( 2 )
 
 [editable path="Brick53"]
 
-[editable path="Brick54"]
-
 [editable path="Brick55"]
-
-[editable path="Brick56"]
 
 [editable path="Brick57"]
 
-[editable path="Brick58"]
-
 [editable path="Brick59"]
-
-[editable path="Brick60"]
 
 [editable path="Brick61"]
 
 [editable path="Brick62"]
 
-[editable path="Brick63"]
-
 [editable path="Brick64"]
-
-[editable path="Brick65"]
 
 [editable path="Brick66"]
 
-[editable path="Brick67"]
-
 [editable path="Brick68"]
-
-[editable path="Brick69"]
-
-[editable path="Brick70"]
-
-[editable path="Brick71"]
-
-[editable path="Brick72"]
