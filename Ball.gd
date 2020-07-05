@@ -27,6 +27,10 @@ func _physics_process(delta):
 		linear_velocity[0] = -200
 	elif linear_velocity[0] >= 0:
 		linear_velocity[0] = 200
+	if linear_velocity[1] < 0:
+		linear_velocity[1] = -200
+	elif linear_velocity[1] >= 0:
+		linear_velocity[1] = 200
 	pass
 
 

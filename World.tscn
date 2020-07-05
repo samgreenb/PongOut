@@ -20,7 +20,6 @@ extents = Vector2( 10, 344 )
 
 [node name="Sprite" type="Sprite" parent="Wall"]
 position = Vector2( 512, 300 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
@@ -31,9 +30,15 @@ polygon = PoolVector2Array( 0.090744, -1.83316, 1024, 0, 1024, 600, 0, 600 )
 [node name="Paleta" parent="." instance=ExtResource( 1 )]
 position = Vector2( 295.908, 320 )
 
+[node name="Sprite" parent="Paleta" index="0"]
+frame = 1
+
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 728, 320 )
 script = ExtResource( 3 )
+
+[node name="Sprite" parent="Paleta2" index="0"]
+frame = 1
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
