@@ -1,15 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Paleta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Paleta2.gd" type="Script" id=3]
 [ext_resource path="res://Brick.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/background.jpg" type="Texture" id=5]
+[ext_resource path="res://Ball2.gd" type="Script" id=6]
 [ext_resource path="res://Porteria.gd" type="Script" id=7]
 [ext_resource path="res://Porteria2.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 368 )
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://Sprites/Font_pong1-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = SubResource( 2 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 344 )
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://Sprites/Font_pong1-Regular.ttf"
@@ -17,16 +28,6 @@ font_path = "res://Sprites/Font_pong1-Regular.ttf"
 [sub_resource type="DynamicFont" id=6]
 size = 60
 font_data = SubResource( 5 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 344 )
-
-[sub_resource type="DynamicFontData" id=3]
-font_path = "res://Sprites/Font_pong1-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=4]
-size = 60
-font_data = SubResource( 3 )
 
 [node name="World" type="Node2D"]
 
@@ -42,20 +43,27 @@ build_mode = 1
 polygon = PoolVector2Array( 0.090744, -1.83316, 1024, 0, 1024, 600, 0, 600 )
 
 [node name="Paleta" parent="." instance=ExtResource( 1 )]
-position = Vector2( 295.908, 320 )
+position = Vector2( 296, 288 )
+
+[node name="Sprite" parent="Paleta" index="0"]
+frame = 0
 
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 728, 320 )
+position = Vector2( 728, 288 )
 script = ExtResource( 3 )
+
+[node name="Sprite" parent="Paleta2" index="0"]
+frame = 0
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
 
 [node name="Ball" parent="." instance=ExtResource( 2 )]
-position = Vector2( 328, 320 )
+position = Vector2( 312, 512 )
 
-[node name="AnimatedSprite" parent="Ball" index="3"]
-frame = 0
+[node name="Ball2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 712.622, 512 )
+script = ExtResource( 6 )
 
 [node name="MedioCampo" type="Area2D" parent="."]
 collision_layer = 0
@@ -76,7 +84,7 @@ margin_left = 528.0
 margin_top = -312.0
 margin_right = 584.0
 margin_bottom = -216.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -87,7 +95,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaP1"]
 position = Vector2( 0, -40 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="PorteriaP2" type="Area2D" parent="."]
 collision_layer = 0
@@ -99,7 +107,7 @@ margin_left = 416.0
 margin_top = 24.0
 margin_right = 472.0
 margin_bottom = 118.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
@@ -110,19 +118,19 @@ __meta__ = {
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PorteriaP2"]
 position = Vector2( 1000, 288 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="Brick" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 48 )
-
-[node name="Sprite" parent="Brick" index="0"]
-frame = 2
 
 [node name="Brick2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 112 )
 
 [node name="Brick3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 176 )
+
+[node name="Sprite" parent="Brick3" index="0"]
+frame = 0
 
 [node name="Brick4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 240 )
@@ -131,7 +139,7 @@ position = Vector2( 848, 240 )
 position = Vector2( 848, 304 )
 
 [node name="Sprite" parent="Brick5" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 368 )
@@ -139,17 +147,20 @@ position = Vector2( 848, 368 )
 [node name="Brick7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 432 )
 
+[node name="Sprite" parent="Brick7" index="0"]
+frame = 0
+
 [node name="Brick8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 496 )
 
 [node name="Sprite" parent="Brick8" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick9" parent="." instance=ExtResource( 4 )]
 position = Vector2( 848, 560 )
 
 [node name="Sprite" parent="Brick9" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick10" parent="." instance=ExtResource( 4 )]
 position = Vector2( 880, 48 )
@@ -157,11 +168,17 @@ position = Vector2( 880, 48 )
 [node name="Brick11" parent="." instance=ExtResource( 4 )]
 position = Vector2( 880, 112 )
 
+[node name="Sprite" parent="Brick11" index="0"]
+frame = 0
+
 [node name="Brick12" parent="." instance=ExtResource( 4 )]
 position = Vector2( 880, 176 )
 
 [node name="Brick13" parent="." instance=ExtResource( 4 )]
 position = Vector2( 880, 240 )
+
+[node name="Sprite" parent="Brick13" index="0"]
+frame = 0
 
 [node name="Brick14" parent="." instance=ExtResource( 4 )]
 position = Vector2( 880, 304 )
@@ -170,7 +187,7 @@ position = Vector2( 880, 304 )
 position = Vector2( 880, 368 )
 
 [node name="Sprite" parent="Brick15" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick16" parent="." instance=ExtResource( 4 )]
 position = Vector2( 880, 432 )
@@ -187,11 +204,17 @@ position = Vector2( 864, 80 )
 [node name="Brick20" parent="." instance=ExtResource( 4 )]
 position = Vector2( 864, 144 )
 
+[node name="Sprite" parent="Brick20" index="0"]
+frame = 0
+
 [node name="Brick21" parent="." instance=ExtResource( 4 )]
 position = Vector2( 864, 208 )
 
 [node name="Brick22" parent="." instance=ExtResource( 4 )]
 position = Vector2( 864, 272 )
+
+[node name="Sprite" parent="Brick22" index="0"]
+frame = 0
 
 [node name="Brick23" parent="." instance=ExtResource( 4 )]
 position = Vector2( 864, 336 )
@@ -200,7 +223,7 @@ position = Vector2( 864, 336 )
 position = Vector2( 864, 400 )
 
 [node name="Sprite" parent="Brick24" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick25" parent="." instance=ExtResource( 4 )]
 position = Vector2( 864, 464 )
@@ -209,7 +232,7 @@ position = Vector2( 864, 464 )
 position = Vector2( 864, 528 )
 
 [node name="Sprite" parent="Brick26" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick27" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896, 80 )
@@ -221,16 +244,13 @@ position = Vector2( 896, 144 )
 position = Vector2( 896, 208 )
 
 [node name="Sprite" parent="Brick29" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick30" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896, 272 )
 
 [node name="Brick31" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896, 336 )
-
-[node name="Sprite" parent="Brick31" index="0"]
-frame = 2
 
 [node name="Brick32" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896, 400 )
@@ -239,7 +259,7 @@ position = Vector2( 896, 400 )
 position = Vector2( 896, 464 )
 
 [node name="Sprite" parent="Brick33" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick34" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896, 528 )
@@ -252,6 +272,9 @@ rotation = 3.14159
 position = Vector2( 176, 112 )
 rotation = 3.14159
 
+[node name="Sprite" parent="Brick36" index="0"]
+frame = 0
+
 [node name="Brick37" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176, 176 )
 rotation = 3.14159
@@ -259,6 +282,9 @@ rotation = 3.14159
 [node name="Brick38" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176, 240 )
 rotation = 3.14159
+
+[node name="Sprite" parent="Brick38" index="0"]
+frame = 0
 
 [node name="Brick39" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176, 304 )
@@ -269,7 +295,7 @@ position = Vector2( 176, 368 )
 rotation = 3.14159
 
 [node name="Sprite" parent="Brick40" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick41" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176, 432 )
@@ -287,6 +313,9 @@ rotation = 3.14159
 position = Vector2( 144, 48 )
 rotation = 3.14159
 
+[node name="Sprite" parent="Brick44" index="0"]
+frame = 0
+
 [node name="Brick45" parent="." instance=ExtResource( 4 )]
 position = Vector2( 144, 112 )
 rotation = 3.14159
@@ -294,6 +323,9 @@ rotation = 3.14159
 [node name="Brick46" parent="." instance=ExtResource( 4 )]
 position = Vector2( 144, 176 )
 rotation = 3.14159
+
+[node name="Sprite" parent="Brick46" index="0"]
+frame = 0
 
 [node name="Brick47" parent="." instance=ExtResource( 4 )]
 position = Vector2( 144, 240 )
@@ -304,7 +336,7 @@ position = Vector2( 144, 304 )
 rotation = 3.14159
 
 [node name="Sprite" parent="Brick48" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick49" parent="." instance=ExtResource( 4 )]
 position = Vector2( 144, 368 )
@@ -314,23 +346,29 @@ rotation = 3.14159
 position = Vector2( 144, 432 )
 rotation = 3.14159
 
+[node name="Sprite" parent="Brick50" index="0"]
+frame = 0
+
 [node name="Brick51" parent="." instance=ExtResource( 4 )]
 position = Vector2( 144, 496 )
 rotation = 3.14159
 
 [node name="Sprite" parent="Brick51" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick52" parent="." instance=ExtResource( 4 )]
 position = Vector2( 144, 560 )
 rotation = 3.14159
 
 [node name="Sprite" parent="Brick52" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick53" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 80 )
 rotation = 3.14159
+
+[node name="Sprite" parent="Brick53" index="0"]
+frame = 0
 
 [node name="Brick54" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 144 )
@@ -339,6 +377,9 @@ rotation = 3.14159
 [node name="Brick55" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 208 )
 rotation = 3.14159
+
+[node name="Sprite" parent="Brick55" index="0"]
+frame = 0
 
 [node name="Brick56" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 272 )
@@ -349,7 +390,7 @@ position = Vector2( 160, 336 )
 rotation = 3.14159
 
 [node name="Sprite" parent="Brick57" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick58" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 400 )
@@ -358,6 +399,9 @@ rotation = 3.14159
 [node name="Brick59" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 464 )
 rotation = 3.14159
+
+[node name="Sprite" parent="Brick59" index="0"]
+frame = 0
 
 [node name="Brick60" parent="." instance=ExtResource( 4 )]
 position = Vector2( 160, 528 )
@@ -368,14 +412,14 @@ position = Vector2( 128, 80 )
 rotation = 3.14159
 
 [node name="Sprite" parent="Brick61" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick62" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 144 )
 rotation = 3.14159
 
 [node name="Sprite" parent="Brick62" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick63" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 208 )
@@ -386,7 +430,7 @@ position = Vector2( 128, 272 )
 rotation = 3.14159
 
 [node name="Sprite" parent="Brick64" index="0"]
-frame = 0
+frame = 2
 
 [node name="Brick65" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 336 )
@@ -396,9 +440,6 @@ rotation = 3.14159
 position = Vector2( 128, 400 )
 rotation = 3.14159
 
-[node name="Sprite" parent="Brick66" index="0"]
-frame = 2
-
 [node name="Brick67" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 464 )
 rotation = 3.14159
@@ -406,9 +447,6 @@ rotation = 3.14159
 [node name="Brick68" parent="." instance=ExtResource( 4 )]
 position = Vector2( 128, 528 )
 rotation = 3.14159
-
-[node name="Sprite" parent="Brick68" index="0"]
-frame = 2
 [connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_PorteriaP1_area_entered"]
 [connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_PorteriaP2_area_entered"]
 
@@ -417,6 +455,8 @@ frame = 2
 [editable path="Paleta2"]
 
 [editable path="Ball"]
+
+[editable path="Ball2"]
 
 [editable path="Brick"]
 

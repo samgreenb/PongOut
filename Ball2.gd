@@ -20,7 +20,7 @@ func _ready():
 	ani.animation= String(rr)
 	set_inertia(100000)
 	can_destroy = 0
-	linear_velocity[0] = xspeed
+	linear_velocity[0] = -xspeed
 	angular_velocity = 0
 	pass # Replace with function body.
 
