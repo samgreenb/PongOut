@@ -8,11 +8,16 @@ var can_destroy = 0
 var xspeed = 200
 var yspeed = 200
 var minxspeed = 200
+onready var ani = $AnimatedSprite
+var r = RandomNumberGenerator.new()
 #const Ball = preload("res://Ball.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#apply_impulse(Vector2.ZERO,Vector2.RIGHT*400+Vector2.UP*200)
+	r.randomize()
+	var rr = r.randi_range(1,4)
+	ani.animation= String(rr)
 	set_inertia(100000)
 	can_destroy = 0
 	linear_velocity[0] = xspeed
@@ -47,7 +52,7 @@ func _on_Ball_body_exited(body):
 		var ball = load("res://Ball.tscn").instance()
 		ball.global_transform = global_transform
 		get_tree().current_scene.add_child(ball)
-		ball.apply_impulse(Vector2.ZERO,Vector2.RIGHT*200)
+		#ball.apply_impulse(Vector2.ZERO,Vector2.RIGHT*200)
 	pass # Replace with function body.
 
 

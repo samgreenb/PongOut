@@ -43,4 +43,3 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.57079
 shape = SubResource( 5 )
-one_way_collision = true
