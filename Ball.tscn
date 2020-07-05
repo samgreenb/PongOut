@@ -33,6 +33,14 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 3 )
+
+[node name="Gol" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2147483648
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gol"]
+shape = SubResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Ball_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Ball_body_exited"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Gol" to="." method="_on_Gol_area_entered"]
