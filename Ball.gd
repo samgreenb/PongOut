@@ -5,27 +5,34 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 var can_destroy = 0
-var xspeed = 100
-var yspeed = 100
+var xspeed = 200
+var yspeed = 200
+var minxspeed = 200
 #const Ball = preload("res://Ball.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	apply_impulse(Vector2.ZERO,Vector2.RIGHT*400+Vector2.UP*200)
+	#apply_impulse(Vector2.ZERO,Vector2.RIGHT*400+Vector2.UP*200)
+	set_inertia(100000)
 	can_destroy = 0
-	#linear_velocity[0] = xspeed
-	#linear_velocity[1] = yspeed
+	linear_velocity[0] = xspeed
+	linear_velocity[1] = yspeed
 	angular_velocity = 0
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _physics_process(delta):
+	if linear_velocity[0] < 0:
+		linear_velocity[0] = -200
+	elif linear_velocity[0] >= 0:
+		linear_velocity[0] = 200
+	pass
 
 
 func _on_Ball_body_entered(body):
-	print_debug(body.name.substr(0,5))
+	#print_debug(body.name.substr(0,5))
+	print_debug(linear_velocity[0])
 	pass # Replace with function body.
 
 
