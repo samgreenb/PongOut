@@ -31,4 +31,8 @@ func _process(delta):
 func _on_PorteriaP1_area_entered(area):
 	p+=1
 	puntos.text= String(p)
+	var s = load("res://PuntoSonido.tscn")
+	s = s.instance()
+	get_tree().current_scene.add_child(s)
+	s.play()
 	pass # Replace with function body.

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/samscore.ogg-2440e0c1298e10b230e4aa681960df88.oggstr"
+
+[deps]
+
+source_file="res://sonidos/samscore.ogg"
+dest_files=[ "res://.import/samscore.ogg-2440e0c1298e10b230e4aa681960df88.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

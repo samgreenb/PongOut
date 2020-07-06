@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Rebote_More.ogg-5b03c210dcff105297f44a2053a1bfdd.oggstr"
+
+[deps]
+
+source_file="res://sonidos/Rebote_More.ogg"
+dest_files=[ "res://.import/Rebote_More.ogg-5b03c210dcff105297f44a2053a1bfdd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

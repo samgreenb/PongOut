@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/rebotesam.ogg-b68a6fef5d3afe1c8948c31b201c38fc.oggstr"
+
+[deps]
+
+source_file="res://sonidos/rebotesam.ogg"
+dest_files=[ "res://.import/rebotesam.ogg-b68a6fef5d3afe1c8948c31b201c38fc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
