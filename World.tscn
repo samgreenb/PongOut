@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Paleta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
@@ -10,8 +10,6 @@
 [ext_resource path="res://Porteria2.gd" type="Script" id=8]
 [ext_resource path="res://Game.gd" type="Script" id=9]
 [ext_resource path="res://World.gd" type="Script" id=10]
-[ext_resource path="res://sonidos/Rebote_More.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Sprites/reloj.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 368 )
@@ -32,29 +30,6 @@ font_path = "res://Sprites/Font_pong1-Regular.ttf"
 [sub_resource type="DynamicFont" id=6]
 size = 60
 font_data = SubResource( 5 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 12 )
-region = Rect2( 0, 0, 118, 178 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 12 )
-region = Rect2( 118, 0, 118, 178 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 12 )
-region = Rect2( 236, 0, 118, 178 )
-
-[sub_resource type="SpriteFrames" id=10]
-animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "Reloj",
-"speed": 7.0
-} ]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 10 )
@@ -81,9 +56,15 @@ __meta__ = {
 [node name="Paleta" parent="." instance=ExtResource( 1 )]
 position = Vector2( 296, 288 )
 
+[node name="Sprite" parent="Paleta" index="0"]
+frame = 0
+
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 728, 288 )
 script = ExtResource( 3 )
+
+[node name="Sprite" parent="Paleta2" index="0"]
+frame = 0
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
@@ -91,12 +72,15 @@ rotation = 4.71238
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 312, 512 )
 
-[node name="AudioStreamPlayer" parent="Ball" index="4"]
-stream = ExtResource( 11 )
+[node name="AnimatedSprite" parent="Ball" index="3"]
+frame = 0
 
 [node name="Ball2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 712.622, 512 )
 script = ExtResource( 6 )
+
+[node name="AnimatedSprite" parent="Ball2" index="3"]
+frame = 0
 
 [node name="MedioCampo" type="Area2D" parent="."]
 collision_layer = 0
@@ -133,7 +117,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaP1"]
-position = Vector2( -24, -40 )
+position = Vector2( 0, -40 )
 shape = SubResource( 4 )
 
 [node name="PorteriaP2" type="Area2D" parent="."]
@@ -159,7 +143,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PorteriaP2"]
-position = Vector2( 1024, 288 )
+position = Vector2( 1000, 288 )
 shape = SubResource( 4 )
 
 [node name="Ladrillos" type="Node2D" parent="."]
@@ -382,25 +366,15 @@ position = Vector2( 56, 40 )
 rotation = -3.14159
 
 [node name="Label" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0.580392 )
-margin_left = 552.0
-margin_top = 496.213
-margin_right = 664.0
-margin_bottom = 584.213
+margin_left = 544.0
+margin_top = 504.0
+margin_right = 656.0
+margin_bottom = 592.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Reloj" type="AnimatedSprite" parent="Label"]
-modulate = Color( 0, 0, 0, 0.701961 )
-position = Vector2( 76.361, 23.574 )
-scale = Vector2( 0.271186, 0.267269 )
-frames = SubResource( 10 )
-animation = "Reloj"
-frame = 2
-playing = true
 [connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_PorteriaP1_area_entered"]
 [connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_PorteriaP2_area_entered"]
 

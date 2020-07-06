@@ -126,7 +126,6 @@ shape = SubResource( 3 )
 scale = Vector2( 0.271186, 0.271186 )
 frames = SubResource( 16 )
 animation = "4"
-frame = 2
 playing = true
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource( 4 )]
