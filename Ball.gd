@@ -51,6 +51,8 @@ func _on_Ball_body_exited(body):
 		var ball = load("res://Ball.tscn").instance()
 		ball.global_transform = global_transform
 		get_tree().current_scene.add_child(ball)
+	else:
+		pass
 		#ball.apply_impulse(Vector2.ZERO,Vector2.RIGHT*200)
 	pass # Replace with function body.
 
