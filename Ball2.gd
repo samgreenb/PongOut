@@ -40,14 +40,14 @@ func _physics_process(delta):
 
 func _on_Ball_body_entered(body):
 	#print_debug(body.name.substr(0,5))
-	print_debug(linear_velocity[0])
+	#print_debug(linear_velocity[0])
 	pass # Replace with function body.
 
 
 func _on_Ball_body_exited(body):
 	if can_destroy == 1 and body.name.substr(0,5) == "Brick":
 		can_destroy = 0
-		body.queue_free()
+		body.destroy()
 		var ball = load("res://Ball.tscn").instance()
 		ball.global_transform = global_transform
 		get_tree().current_scene.add_child(ball)

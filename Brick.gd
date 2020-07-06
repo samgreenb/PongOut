@@ -6,8 +6,10 @@ extends StaticBody2D
 func _ready():
 	
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	
+func destroy():
+	var explosion = load("res://Explosion.tscn").instance()
+	explosion.global_position = global_position
+	explosion.play()
+	get_tree().current_scene.add_child(explosion)
+	queue_free()
