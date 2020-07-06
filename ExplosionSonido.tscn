@@ -3,5 +3,5 @@
 [ext_resource path="res://ExplosionSonido.gd" type="Script" id=1]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-volume_db = -16.155
+volume_db = -23.223
 script = ExtResource( 1 )
