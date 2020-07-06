@@ -56,9 +56,15 @@ __meta__ = {
 [node name="Paleta" parent="." instance=ExtResource( 1 )]
 position = Vector2( 296, 288 )
 
+[node name="Sprite" parent="Paleta" index="0"]
+frame = 0
+
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 728, 288 )
 script = ExtResource( 3 )
+
+[node name="Sprite" parent="Paleta2" index="0"]
+frame = 0
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
@@ -66,15 +72,9 @@ rotation = 4.71238
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 312, 512 )
 
-[node name="AnimatedSprite" parent="Ball" index="3"]
-frame = 1
-
 [node name="Ball2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 712.622, 512 )
 script = ExtResource( 6 )
-
-[node name="AnimatedSprite" parent="Ball2" index="3"]
-frame = 1
 
 [node name="MedioCampo" type="Area2D" parent="."]
 collision_layer = 0
