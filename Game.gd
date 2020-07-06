@@ -8,12 +8,15 @@ var dynamic_font = DynamicFont.new()
 var tiempo_pasado = 0
 var num = 0
 var t
+var ws = preload("res://WinScreen.tscn")
+
+signal end
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	t = Timer.new()
 	t.set_one_shot(true)
 	add_child(t)
-	t.start(6)
+	t.start(30)
 	t.connect("timeout",self,"end")
 	pass # Replace with function body.
 
@@ -37,4 +40,17 @@ func _process(delta):
 
 func end():
 	t.stop()
+	ws = ws.instance()
+	ws.global_position = Vector2(512,300)
+	var j2 = get_tree().get_root().find_node("PorteriaP1", true, false).puntos.text
+	var j1 = get_tree().get_root().find_node("PorteriaP2", true, false).puntos.text
+	j2 = j2.to_int()
+	j1=j1.to_int()
+	if j2<j1:
+		ws.frame = 0
+	else:
+		ws.frame = 1
+	get_tree().current_scene.add_child(ws)
+	emit_signal("end")
+	queue_free()
 	pass
