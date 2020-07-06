@@ -15,6 +15,8 @@ func _ready():
 			set_stream(load("res://sonidos/Goal_More.ogg"))
 		2:
 			set_stream(load("res://sonidos/samscore.ogg"))
+		3:
+			set_stream(load("res://sonidos/golasoooroman.ogg"))
 	get_stream().set_loop(false)
 	pass # Replace with function body.
 

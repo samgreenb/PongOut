@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/golasoooroman.ogg-833fc37fcb771c75c6a230d0b99e0976.oggstr"
+
+[deps]
+
+source_file="res://sonidos/golasoooroman.ogg"
+dest_files=[ "res://.import/golasoooroman.ogg-833fc37fcb771c75c6a230d0b99e0976.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

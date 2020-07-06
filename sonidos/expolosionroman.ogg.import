@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/expolosionroman.ogg-20897e834e901a8ac1095da8c06a8e8c.oggstr"
+
+[deps]
+
+source_file="res://sonidos/expolosionroman.ogg"
+dest_files=[ "res://.import/expolosionroman.ogg-20897e834e901a8ac1095da8c06a8e8c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
