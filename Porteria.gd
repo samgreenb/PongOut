@@ -9,6 +9,7 @@ var p = 0
 var num = 2 #numero de la animacion de la font
 var tiempo_pasado = 0
 var dynamic_font = DynamicFont.new()
+const sound = preload("res://PuntoSonido.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -31,8 +32,7 @@ func _process(delta):
 func _on_PorteriaP1_area_entered(area):
 	p+=1
 	puntos.text= String(p)
-	var s = load("res://PuntoSonido.tscn")
-	s = s.instance()
+	var s = sound.instance()
 	get_tree().current_scene.add_child(s)
 	s.play()
 	pass # Replace with function body.

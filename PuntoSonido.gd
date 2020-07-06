@@ -9,7 +9,7 @@ var r = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	r.randomize()
-	var rr = r.randi_range(1,2)
+	var rr = r.randi_range(1,3)
 	match rr:
 		1:
 			set_stream(load("res://sonidos/Goal_More.ogg"))

@@ -33,7 +33,7 @@ func _process(delta):
 		set("custom_fonts/font", dynamic_font)
 		if !t.is_stopped():
 			text = String(floor(t.time_left))
-		print_debug(t.get_time_left())
+		#print_debug(t.get_time_left())
 		#print_debug("num=" + String(num))
 		num += 1	
 #	pass

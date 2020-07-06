@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 const eplosion = preload("res://Explosion.tscn")
-
+const sonidoexp = preload("res://ExplosionSonido.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -11,10 +11,8 @@ func destroy():
 	var explosion = eplosion.instance()
 	explosion.global_position = global_position
 	explosion.play()
-	var s = load("res://ExplosionSonido.tscn")
-	s = s.instance()
+	var s = sonidoexp.instance()
 	get_tree().current_scene.add_child(s)
 	s.play()
 	get_tree().current_scene.add_child(explosion)
-	
 	queue_free()

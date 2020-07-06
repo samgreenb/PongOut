@@ -56,7 +56,7 @@ func _on_Ball_body_exited(body):
 
 
 func _on_Area2D_area_entered(area):
-	print_debug("Puedes romper")
+	#print_debug("Puedes romper")
 	can_destroy = 1
 	pass # Replace with function body.
 

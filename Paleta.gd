@@ -2,16 +2,21 @@ extends KinematicBody2D
 
 var speed = 600
 var scalaY = scale.y
+var counter = 0
 
 func _ready():
 	pass
 
 func _physics_process(delta):
+	counter+=1
 	if(Input.is_action_pressed("j1_up")):
 		move_and_collide(Vector2.UP*speed*delta)
 	if(Input.is_action_pressed("j1_down")):
 		move_and_collide(Vector2.DOWN*speed*delta)
-	cambiar_tam()
+	if counter * delta > 1:
+		#print_debug("lol")
+		cambiar_tam()
+		counter = 0
 
 func cambiar_tam():
 	var labelP1 = get_tree().current_scene.get_node("PorteriaP1/P2S")
