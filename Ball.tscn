@@ -125,8 +125,9 @@ shape = SubResource( 3 )
 scale = Vector2( 0.271186, 0.271186 )
 frames = SubResource( 16 )
 animation = "4"
-frame = 1
 playing = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Ball_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Ball_body_exited"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

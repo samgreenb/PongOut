@@ -9,6 +9,8 @@ var xspeed = 300
 var yspeed = 300
 var minxspeed = 300
 onready var ani = $AnimatedSprite
+onready var sound = $AudioStreamPlayer
+
 var r = RandomNumberGenerator.new()
 #const Ball = preload("res://Ball.tscn")
 
@@ -17,6 +19,7 @@ func _ready():
 	#apply_impulse(Vector2.ZERO,Vector2.RIGHT*400+Vector2.UP*200)
 	r.randomize()
 	var rr = r.randi_range(1,4)
+	
 	ani.animation= String(rr)
 	set_inertia(100000)
 	can_destroy = 0
