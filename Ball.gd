@@ -68,6 +68,10 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Gol_area_entered(area):
+	var confetti = load("res://Confetti.tscn").instance()
+	confetti.global_position = global_position
+	get_tree().current_scene.add_child(confetti)
+	confetti.play()
 	queue_free()
 	pass # Replace with function body.
 	
