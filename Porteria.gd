@@ -16,7 +16,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	tiempo_pasado += 1
 	#print_debug(tiempo_pasado % 7)
 	if tiempo_pasado % 7 == 0: #entramos cada 7 frames para cambiar la font
@@ -29,7 +29,7 @@ func _process(delta):
 		num += 1
 	pass
 
-func _on_PorteriaP1_area_entered(area):
+func _on_PorteriaP1_area_entered(_area):
 	p+=1
 	puntos.text= String(p)
 	var s = sound.instance()

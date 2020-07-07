@@ -23,13 +23,16 @@ func _ready():
 	ani.animation= String(rr)
 	set_inertia(100000)
 	can_destroy = 0
-	linear_velocity[0] = xspeed
+	if global_position[0] < 512:
+		linear_velocity[0] = xspeed
+	else:
+		linear_velocity[0] = -xspeed
 	angular_velocity = 0
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if linear_velocity[0] < 0:
 		linear_velocity[0] = -300
 	elif linear_velocity[0] >= 0:
@@ -41,19 +44,14 @@ func _physics_process(delta):
 	pass
 
 
-func _on_Ball_body_entered(body):
-	#print_debug(body.name.substr(0,5))
-	#print_debug(linear_velocity[0])
-	pass # Replace with function body.
-
 
 func _on_Ball_body_exited(body):
-	if can_destroy == 1 and body.name.substr(0,5) == "Brick":
+	if can_destroy == 1 and body.get_name() == "Brick":
 		can_destroy = 0
 		body.destroy()
-		var ball = load("res://Ball.tscn").instance()
-		ball.global_transform = global_transform
-		get_tree().current_scene.add_child(ball)
+		#var ball = load("res://Ball.tscn").instance()
+		#ball.global_transform = global_transform
+		#get_tree().current_scene.call_deferred("add_child", ball)
 	else:
 		sound.play()
 		pass
@@ -61,13 +59,13 @@ func _on_Ball_body_exited(body):
 	pass # Replace with function body.
 
 
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	#print_debug("Puedes romper")
 	can_destroy = 1
 	pass # Replace with function body.
 
 
-func _on_Gol_area_entered(area):
+func _on_Gol_area_entered(_area):
 	var confetti = load("res://Confetti.tscn").instance()
 	confetti.global_position = global_position
 	get_tree().current_scene.add_child(confetti)

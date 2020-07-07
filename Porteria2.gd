@@ -24,7 +24,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _process(delta):
+func _process(_delta):
 	tiempo_pasado += 1
 	#print_debug(tiempo_pasado % 7)
 	if tiempo_pasado % 7 == 0: #entramos cada 7 frames para cambiar la font
@@ -38,7 +38,7 @@ func _process(delta):
 	pass
 
 
-func _on_PorteriaP2_area_entered(area):
+func _on_PorteriaP2_area_entered(_area):
 	p+=1
 	puntos.text= String(p)
 	var s = sound.instance()

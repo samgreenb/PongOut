@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Paleta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Paleta2.gd" type="Script" id=3]
 [ext_resource path="res://Brick.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/background.jpg" type="Texture" id=5]
-[ext_resource path="res://Ball2.gd" type="Script" id=6]
 [ext_resource path="res://Porteria.gd" type="Script" id=7]
 [ext_resource path="res://Porteria2.gd" type="Script" id=8]
 [ext_resource path="res://Game.gd" type="Script" id=9]
@@ -57,9 +56,15 @@ __meta__ = {
 [node name="Paleta" parent="." instance=ExtResource( 1 )]
 position = Vector2( 296, 288 )
 
+[node name="Sprite" parent="Paleta" index="0"]
+frame = 1
+
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 728, 288 )
 script = ExtResource( 3 )
+
+[node name="Sprite" parent="Paleta2" index="0"]
+frame = 1
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
@@ -68,14 +73,13 @@ rotation = 4.71238
 position = Vector2( 312, 512 )
 
 [node name="AnimatedSprite" parent="Ball" index="3"]
-frame = 2
+frame = 0
 
 [node name="Ball2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 712.622, 512 )
-script = ExtResource( 6 )
 
 [node name="AnimatedSprite" parent="Ball2" index="3"]
-frame = 2
+frame = 0
 
 [node name="MedioCampo" type="Area2D" parent="."]
 collision_layer = 0
@@ -373,6 +377,7 @@ __meta__ = {
 
 [node name="Reloj" parent="Label" instance=ExtResource( 11 )]
 position = Vector2( 72.8959, 23.9999 )
+frame = 2
 [connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_PorteriaP1_area_entered"]
 [connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_PorteriaP2_area_entered"]
 

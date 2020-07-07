@@ -6,7 +6,7 @@ extends Label
 # var b = "text"
 var dynamic_font = DynamicFont.new()
 var tiempo_pasado = 0
-var num = 0
+var num = 1
 var t
 var ws = preload("res://WinScreen.tscn")
 
@@ -22,7 +22,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	tiempo_pasado += 1
 	#print_debug(tiempo_pasado % 7)
 	if tiempo_pasado % 7 == 0: #entramos cada 7 frames para cambiar la font
