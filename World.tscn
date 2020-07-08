@@ -57,14 +57,14 @@ __meta__ = {
 position = Vector2( 296, 288 )
 
 [node name="Sprite" parent="Paleta" index="0"]
-frame = 1
+frame = 0
 
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 728, 288 )
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="Paleta2" index="0"]
-frame = 1
+frame = 0
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
@@ -73,13 +73,13 @@ rotation = 4.71238
 position = Vector2( 312, 512 )
 
 [node name="AnimatedSprite" parent="Ball" index="3"]
-frame = 0
+frame = 2
 
 [node name="Ball2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 712.622, 512 )
+position = Vector2( 712, 512 )
 
 [node name="AnimatedSprite" parent="Ball2" index="3"]
-frame = 0
+frame = 2
 
 [node name="MedioCampo" type="Area2D" parent="."]
 collision_layer = 0
@@ -116,7 +116,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PorteriaP1"]
-position = Vector2( 0, -40 )
+position = Vector2( -8, -40 )
 shape = SubResource( 4 )
 
 [node name="PorteriaP2" type="Area2D" parent="."]
@@ -142,7 +142,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PorteriaP2"]
-position = Vector2( 1000, 288 )
+position = Vector2( 1008, 288 )
 shape = SubResource( 4 )
 
 [node name="Ladrillos" type="Node2D" parent="."]
@@ -377,7 +377,7 @@ __meta__ = {
 
 [node name="Reloj" parent="Label" instance=ExtResource( 11 )]
 position = Vector2( 72.8959, 23.9999 )
-frame = 2
+frame = 1
 [connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_PorteriaP1_area_entered"]
 [connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_PorteriaP2_area_entered"]
 

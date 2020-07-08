@@ -15,6 +15,7 @@ const font1 = preload("res://Sprites/Font_pong1-Regular.ttf")
 const font2 = preload("res://Sprites/Font_pong2-Regular.ttf")
 const font3 = preload("res://Sprites/Font_pong3-Regular.ttf")
 var fonts
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	fonts = []
