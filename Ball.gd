@@ -43,7 +43,15 @@ func _physics_process(_delta):
 		linear_velocity[1] = 300
 	pass
 
-
+func first_ball():
+	r.randomize()
+	var rr = r.randi_range(1,4)
+	global_position[1] = r.randi_range(100,500)
+	if r.randi_range(1,2) == 1:
+		linear_velocity[1]=yspeed
+	else:
+		linear_velocity[1] =-yspeed
+	pass # Replace with function body.
 
 func _on_Ball_body_exited(body):
 	if can_destroy == 1 and body.get_name() == "Brick":

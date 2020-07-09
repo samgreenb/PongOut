@@ -6,9 +6,14 @@ extends Node2D
 # var b = "text"
 onready var t = $Label
 var ended = false
+onready var b1 = $Ball
+onready var b2 = $Ball2
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	t.connect("end",self,"end")
+	b1.first_ball()
+	b2.first_ball()
 	pass # Replace with function body.
 
 
