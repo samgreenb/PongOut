@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/background.jpg" type="Texture" id=1]
 [ext_resource path="res://Sprites/leftwins.png" type="Texture" id=2]
 [ext_resource path="res://main_menu/main_menu.gd" type="Script" id=3]
+[ext_resource path="res://ladrillos.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Paleta.tscn" type="PackedScene" id=5]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 3 )
@@ -28,3 +30,81 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Paleta" parent="." instance=ExtResource( 5 )]
+position = Vector2( 276, 300 )
+script = null
+
+[node name="Paleta2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 748, 300 )
+script = null
+
+[node name="Ladrillos" parent="." instance=ExtResource( 4 )]
+
+[node name="Brick41" parent="Ladrillos" index="0"]
+script = null
+
+[node name="Brick42" parent="Ladrillos" index="1"]
+script = null
+
+[node name="Brick43" parent="Ladrillos" index="2"]
+script = null
+
+[node name="Brick44" parent="Ladrillos" index="3"]
+script = null
+
+[node name="Brick45" parent="Ladrillos" index="4"]
+script = null
+
+[node name="Brick46" parent="Ladrillos" index="5"]
+script = null
+
+[node name="Brick47" parent="Ladrillos" index="6"]
+script = null
+
+[node name="Brick48" parent="Ladrillos" index="7"]
+script = null
+
+[node name="Brick49" parent="Ladrillos" index="8"]
+script = null
+
+[node name="Brick50" parent="Ladrillos" index="9"]
+script = null
+
+[node name="Brick51" parent="Ladrillos" index="10"]
+script = null
+
+[node name="Brick52" parent="Ladrillos" index="11"]
+script = null
+
+[node name="Brick53" parent="Ladrillos" index="12"]
+script = null
+
+[node name="Brick54" parent="Ladrillos" index="13"]
+script = null
+
+[node name="Brick55" parent="Ladrillos" index="14"]
+script = null
+
+[node name="Brick56" parent="Ladrillos" index="15"]
+script = null
+
+[node name="Brick57" parent="Ladrillos" index="16"]
+script = null
+
+[node name="Brick58" parent="Ladrillos" index="17"]
+script = null
+
+[node name="Brick59" parent="Ladrillos" index="18"]
+script = null
+
+[node name="Brick60" parent="Ladrillos" index="19"]
+script = null
+
+[node name="Brick61" parent="Ladrillos" index="20"]
+script = null
+
+[node name="Brick62" parent="Ladrillos" index="21"]
+script = null
+
+[editable path="Ladrillos"]

@@ -45,7 +45,6 @@ func _physics_process(_delta):
 
 func first_ball():
 	r.randomize()
-	var rr = r.randi_range(1,4)
 	global_position[1] = r.randi_range(100,500)
 	if r.randi_range(1,2) == 1:
 		linear_velocity[1]=yspeed

@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Brick.gd" type="Script" id=2]
+
+[node name="Ladrillos" type="Node2D"]
+
+[node name="Brick41" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 920, 95 )
+script = ExtResource( 2 )
+
+[node name="Brick42" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 920, 175 )
+script = ExtResource( 2 )
+
+[node name="Brick43" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 920, 255 )
+script = ExtResource( 2 )
+
+[node name="Brick44" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 920, 335 )
+script = ExtResource( 2 )
+
+[node name="Brick45" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 920, 415 )
+script = ExtResource( 2 )
+
+[node name="Brick46" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 920, 495 )
+script = ExtResource( 2 )
+
+[node name="Brick47" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 95 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick48" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 175 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick49" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 255 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick50" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 335 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick51" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 415 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick52" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 495 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick53" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 968, 560 )
+script = ExtResource( 2 )
+
+[node name="Brick54" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 968, 416 )
+script = ExtResource( 2 )
+
+[node name="Brick55" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 968, 288 )
+script = ExtResource( 2 )
+
+[node name="Brick56" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 968, 160 )
+script = ExtResource( 2 )
+
+[node name="Brick57" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 968, 40 )
+script = ExtResource( 2 )
+
+[node name="Brick58" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 560 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick59" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 416 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick60" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 288 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick61" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 160 )
+rotation = -3.14159
+script = ExtResource( 2 )
+
+[node name="Brick62" type="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 40 )
+rotation = -3.14159
+script = ExtResource( 2 )
