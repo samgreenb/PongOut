@@ -32,15 +32,12 @@ func _ready():
 		linear_velocity[0] = -xspeed
 	angular_velocity = 0
 	
-	if (global_position.x < 0
-			or global_position.x > 1024
-			or (global_position.y < 0
-			or global_position.y > 600)):
-				queue_free()
+
 	
 	connect("created",ball_counter,"add_ball")
 	emit_signal("created")
 	connect("tree_exited",ball_counter,"remove_ball")
+	ball_counter.connect("game_ended",self,"queue_free")
 	pass # Replace with function body.
 
 
@@ -54,6 +51,11 @@ func _physics_process(_delta):
 		linear_velocity[1] = -xspeed
 	elif linear_velocity[1] >= 0:
 		linear_velocity[1] = xspeed
+	if (global_position.x < 0
+			or global_position.x > 1024
+			or global_position.y < 0
+			or global_position.y > 600):
+				queue_free()
 	pass
 
 func first_ball():

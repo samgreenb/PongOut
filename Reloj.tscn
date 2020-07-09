@@ -29,4 +29,5 @@ animations = [ {
 scale = Vector2( 0.258033, 0.243284 )
 frames = SubResource( 4 )
 animation = "Reloj"
+frame = 1
 playing = true

@@ -56,5 +56,6 @@ func end():
 		ws.frame = 2
 	get_tree().current_scene.add_child(ws)
 	emit_signal("end")
+	$"/root/BallCounter".delete_all()
 	queue_free()
 	pass

@@ -10,7 +10,7 @@
 [ext_resource path="res://Reloj.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 368 )
+extents = Vector2( 10, 300 )
 
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://Sprites/Font_pong1-Regular.ttf"
@@ -20,7 +20,7 @@ size = 60
 font_data = SubResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 344 )
+extents = Vector2( 10, 304 )
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://Sprites/Font_pong1-Regular.ttf"
@@ -135,16 +135,20 @@ shape = SubResource( 4 )
 [node name="Label" type="Label" parent="."]
 margin_left = 544.0
 margin_top = 504.0
-margin_right = 656.0
-margin_bottom = 592.0
+margin_right = 600.0
+margin_bottom = 544.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Reloj" parent="Label" instance=ExtResource( 11 )]
-position = Vector2( 72.8959, 23.9999 )
+position = Vector2( 72, 22.8261 )
+scale = Vector2( 0.271186, 0.256473 )
+frame = 0
 [connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_Porteria_area_entered"]
 [connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_Porteria_area_entered"]
 
