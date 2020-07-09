@@ -16,10 +16,12 @@ func _ready():
 	t.connect("end",self,"end")
 	b1.first_ball()
 	b2.first_ball()
+	b1.connect("tree_exited",self,"end")
 	p1.up = "j1_up"
 	p1.down = "j1_down"
 	p2.up = "j2_up"
 	p2.down = "j2_down"
+	$"/root/BallCounter".num_balls = 2
 	pass # Replace with function body.
 
 

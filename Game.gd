@@ -23,6 +23,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if $"/root/BallCounter".num_balls == 0:
+		end()
 	tiempo_pasado += 1
 	#print_debug(tiempo_pasado % 7)
 	if tiempo_pasado % 7 == 0: #entramos cada 7 frames para cambiar la font
@@ -48,8 +50,10 @@ func end():
 	j1=j1.to_int()
 	if j2<j1:
 		ws.frame = 0
-	else:
+	elif j1<j2:
 		ws.frame = 1
+	else:
+		ws.frame = 2
 	get_tree().current_scene.add_child(ws)
 	emit_signal("end")
 	queue_free()

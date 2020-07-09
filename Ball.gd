@@ -10,6 +10,9 @@ var yspeed = 300
 var minxspeed = 300
 onready var ani = $AnimatedSprite
 onready var sound = $AudioStreamPlayer
+onready var ball_counter = $"/root/BallCounter"
+
+signal created
 
 var r = RandomNumberGenerator.new()
 #const Ball = preload("res://Ball.tscn")
@@ -28,19 +31,29 @@ func _ready():
 	else:
 		linear_velocity[0] = -xspeed
 	angular_velocity = 0
+	
+	if (global_position.x < 0
+			or global_position.x > 1024
+			or (global_position.y < 0
+			or global_position.y > 600)):
+				queue_free()
+	
+	connect("created",ball_counter,"add_ball")
+	emit_signal("created")
+	connect("tree_exited",ball_counter,"remove_ball")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	if linear_velocity[0] < 0:
-		linear_velocity[0] = -300
+		linear_velocity[0] = -xspeed
 	elif linear_velocity[0] >= 0:
-		linear_velocity[0] = 300
+		linear_velocity[0] = xspeed
 	if linear_velocity[1] < 0:
-		linear_velocity[1] = -300
+		linear_velocity[1] = -xspeed
 	elif linear_velocity[1] >= 0:
-		linear_velocity[1] = 300
+		linear_velocity[1] = xspeed
 	pass
 
 func first_ball():
@@ -63,6 +76,9 @@ func _on_Ball_body_exited(body):
 		sound.play()
 		pass
 		#ball.apply_impulse(Vector2.ZERO,Vector2.RIGHT*200)
+		
+	#xspeed += 4
+	
 	pass # Replace with function body.
 
 
