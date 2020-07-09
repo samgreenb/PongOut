@@ -5,3 +5,4 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 volume_db = -37.358
 script = ExtResource( 1 )
+[connection signal="finished" from="." to="." method="queue_free"]

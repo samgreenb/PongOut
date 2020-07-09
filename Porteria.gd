@@ -34,8 +34,7 @@ func _on_PorteriaP1_area_entered(area):
 	p+=1
 	puntos.text= String(p)
 	var s = sound.instance()
-	get_tree().current_scene.call_deferred("add_child", s)
-	s.play()
+	get_tree().current_scene.call_deferred("add_child",s)
 	var c = confeti.instance()
 	c.global_position = area.global_position
 	get_tree().current_scene.call_deferred("add_child", c)
@@ -44,4 +43,5 @@ func _on_PorteriaP1_area_entered(area):
 		c.play()
 	else:
 		c.play()
+	c.connect("animation_finished",c,"queue_free")
 	pass # Replace with function body.

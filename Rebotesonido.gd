@@ -18,7 +18,7 @@ func _ready():
 		3:
 			set_stream(load("res://sonidos/boingroman.ogg"))
 	get_stream().set_loop(false)
-	set_volume_db(-40)
+	set_volume_db(-35)
 	pass # Replace with function body.
 
 
