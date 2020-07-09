@@ -19,8 +19,8 @@ func _physics_process(delta):
 		counter = 0
 
 func cambiar_tam():
-	var labelP1 = get_tree().current_scene.get_node("PorteriaP1/P2S")
-	var labelP2 = get_tree().current_scene.get_node("PorteriaP2/P1S")
+	var labelP1 = get_tree().current_scene.get_node("PorteriaP1/PS")
+	var labelP2 = get_tree().current_scene.get_node("PorteriaP2/PS")
 	var puntosP1 = labelP1.text.to_int()
 	var puntosP2 = labelP2.text.to_int()
 	scale.y = scalaY + clamp(puntosP1 - puntosP2,-2,2) * 0.15

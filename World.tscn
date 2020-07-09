@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Paleta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://ladrillos.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/background.jpg" type="Texture" id=5]
 [ext_resource path="res://Porteria.gd" type="Script" id=7]
-[ext_resource path="res://Porteria2.gd" type="Script" id=8]
 [ext_resource path="res://Game.gd" type="Script" id=9]
 [ext_resource path="res://World.gd" type="Script" id=10]
 [ext_resource path="res://Reloj.tscn" type="PackedScene" id=11]
@@ -57,14 +56,14 @@ __meta__ = {
 position = Vector2( 276, 300 )
 
 [node name="Sprite" parent="Paleta" index="0"]
-frame = 0
+frame = 1
 
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 748, 300 )
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="Paleta2" index="0"]
-frame = 0
+frame = 1
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
@@ -73,13 +72,13 @@ rotation = 4.71238
 position = Vector2( 312, 512 )
 
 [node name="AnimatedSprite" parent="Ball" index="3"]
-frame = 2
+frame = 0
 
 [node name="Ball2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 712, 512 )
 
 [node name="AnimatedSprite" parent="Ball2" index="3"]
-frame = 2
+frame = 0
 
 [node name="MedioCampo" type="Area2D" parent="."]
 collision_layer = 0
@@ -101,7 +100,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="P2S" type="Label" parent="PorteriaP1"]
+[node name="PS" type="Label" parent="PorteriaP1"]
 margin_left = 556.0
 margin_top = -292.0
 margin_right = 612.0
@@ -122,12 +121,12 @@ shape = SubResource( 4 )
 [node name="PorteriaP2" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="P1S" type="Label" parent="PorteriaP2"]
+[node name="PS" type="Label" parent="PorteriaP2"]
 margin_left = 400.0
 margin_top = 8.0
 margin_right = 456.0
@@ -160,9 +159,9 @@ __meta__ = {
 
 [node name="Reloj" parent="Label" instance=ExtResource( 11 )]
 position = Vector2( 72.8959, 23.9999 )
-frame = 1
-[connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_PorteriaP1_area_entered"]
-[connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_PorteriaP2_area_entered"]
+frame = 2
+[connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_Porteria_area_entered"]
+[connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_Porteria_area_entered"]
 
 [editable path="Paleta"]
 

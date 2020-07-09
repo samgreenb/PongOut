@@ -4,7 +4,7 @@ extends Area2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var puntos = $P2S
+onready var puntos = $PS
 var p = 0
 var num = 2 #numero de la animacion de la font
 var tiempo_pasado = 0
@@ -25,12 +25,12 @@ func _process(_delta):
 			num = 1 #reiniciamos el contador de las fonts
 		dynamic_font.font_data = load("res://Sprites/Font_pong"+String(num)+"-Regular.ttf")
 		dynamic_font.size = 64
-		$P2S.set("custom_fonts/font", dynamic_font)
+		puntos.set("custom_fonts/font", dynamic_font)
 		#print_debug("num=" + String(num))
 		num += 1
 	pass
 
-func _on_PorteriaP1_area_entered(area):
+func _on_Porteria_area_entered(area):
 	p+=1
 	puntos.text= String(p)
 	var s = sound.instance()
