@@ -56,9 +56,15 @@ __meta__ = {
 [node name="Paleta" parent="." instance=ExtResource( 1 )]
 position = Vector2( 276, 300 )
 
+[node name="Sprite" parent="Paleta" index="0"]
+frame = 0
+
 [node name="Paleta2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 748, 300 )
 script = ExtResource( 3 )
+
+[node name="Sprite" parent="Paleta2" index="0"]
+frame = 0
 
 [node name="CollisionShape2D" parent="Paleta2" index="1"]
 rotation = 4.71238
@@ -66,8 +72,14 @@ rotation = 4.71238
 [node name="Ball" parent="." instance=ExtResource( 2 )]
 position = Vector2( 312, 512 )
 
+[node name="AnimatedSprite" parent="Ball" index="3"]
+frame = 2
+
 [node name="Ball2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 712, 512 )
+
+[node name="AnimatedSprite" parent="Ball2" index="3"]
+frame = 2
 
 [node name="MedioCampo" type="Area2D" parent="."]
 collision_layer = 0
@@ -148,6 +160,7 @@ __meta__ = {
 
 [node name="Reloj" parent="Label" instance=ExtResource( 11 )]
 position = Vector2( 72.8959, 23.9999 )
+frame = 1
 [connection signal="area_entered" from="PorteriaP1" to="PorteriaP1" method="_on_PorteriaP1_area_entered"]
 [connection signal="area_entered" from="PorteriaP2" to="PorteriaP2" method="_on_PorteriaP2_area_entered"]
 

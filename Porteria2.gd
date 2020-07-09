@@ -14,6 +14,7 @@ const sound = preload("res://PuntoSonido.tscn")
 const font1 = preload("res://Sprites/Font_pong1-Regular.ttf")
 const font2 = preload("res://Sprites/Font_pong2-Regular.ttf")
 const font3 = preload("res://Sprites/Font_pong3-Regular.ttf")
+const confeti = preload("res://Confetti.tscn")
 var fonts
 
 # Called when the node enters the scene tree for the first time.
@@ -39,10 +40,18 @@ func _process(_delta):
 	pass
 
 
-func _on_PorteriaP2_area_entered(_area):
+func _on_PorteriaP2_area_entered(area):
 	p+=1
 	puntos.text= String(p)
 	var s = sound.instance()
-	get_tree().current_scene.add_child(s)
+	get_tree().current_scene.call_deferred("add_child", s)
 	s.play()
+	var c = confeti.instance()
+	c.global_position = area.global_position
+	get_tree().current_scene.call_deferred("add_child", c)
+	if area.global_position[0] > 300:
+		c.flip_h = true
+		c.play()
+	else:
+		c.play()
 	pass # Replace with function body.

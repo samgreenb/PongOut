@@ -10,6 +10,7 @@ var num = 2 #numero de la animacion de la font
 var tiempo_pasado = 0
 var dynamic_font = DynamicFont.new()
 const sound = preload("res://PuntoSonido.tscn")
+const confeti = preload("res://Confetti.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -29,10 +30,18 @@ func _process(_delta):
 		num += 1
 	pass
 
-func _on_PorteriaP1_area_entered(_area):
+func _on_PorteriaP1_area_entered(area):
 	p+=1
 	puntos.text= String(p)
 	var s = sound.instance()
-	get_tree().current_scene.add_child(s)
+	get_tree().current_scene.call_deferred("add_child", s)
 	s.play()
+	var c = confeti.instance()
+	c.global_position = area.global_position
+	get_tree().current_scene.call_deferred("add_child", c)
+	if area.global_position[0] > 300:
+		c.flip_h = true
+		c.play()
+	else:
+		c.play()
 	pass # Replace with function body.

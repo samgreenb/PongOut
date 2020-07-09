@@ -16,9 +16,9 @@ func destroy():
 	explosion.global_position = global_position
 	explosion.play()
 	var s = sonidoexp.instance()
-	get_tree().current_scene.add_child(s)
+	get_tree().current_scene.call_deferred("add_child", s)
 	s.play()
-	get_tree().current_scene.add_child(explosion)
+	get_tree().current_scene.call_deferred("add_child", explosion)
 	var b = Ball.instance()
 	b.global_transform = global_transform
 	get_tree().current_scene.call_deferred("add_child", b)
