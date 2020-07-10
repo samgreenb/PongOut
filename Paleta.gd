@@ -11,16 +11,15 @@ var down
 func _ready():
 	labelP1 = get_tree().current_scene.get_node("PorteriaP1/PS")
 	labelP2 = get_tree().current_scene.get_node("PorteriaP2/PS")
-	pass
 
 func _physics_process(delta):
-	counter+=1
 	if(Input.is_action_pressed(up)):
 		move_and_collide(Vector2.UP*speed*delta)
 	if(Input.is_action_pressed(down)):
 		move_and_collide(Vector2.DOWN*speed*delta)
+		
+	counter+=1
 	if counter * delta > 1:
-		#print_debug("lol")
 		cambiar_tam()
 		counter = 0
 

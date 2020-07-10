@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Sprites/rightwins.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/leftwins.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/ladrillo.jpg" type="Texture" id=3]
+[ext_resource path="res://Sprites/tie.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -11,13 +11,13 @@ region = Rect2( 0, 0, 1024, 600 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 1024, 600 )
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 852, 499 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 333, 0, 333, 250 )
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 1024, 600 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {

@@ -1,40 +1,38 @@
 extends Area2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-onready var puntos = $PS
-var p = 0
-var num = 2 #numero de la animacion de la font
-var tiempo_pasado = 0
-var dynamic_font = DynamicFont.new()
 const sound = preload("res://PuntoSonido.tscn")
 const confeti = preload("res://Confetti.tscn")
-# Called when the node enters the scene tree for the first time.
+
+onready var puntos = $PS
+
+var p = 0
+var num = 1 #numero de la animacion de la font
+var tiempo_pasado = 0
+var dynamic_font = DynamicFont.new()
+var font = []
+
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	font.append(load("res://Sprites/Font_pong1-Regular.ttf"))
+	font.append(load("res://Sprites/Font_pong2-Regular.ttf"))
+	font.append(load("res://Sprites/Font_pong3-Regular.ttf"))
+	
 func _process(_delta):
 	tiempo_pasado += 1
-	#print_debug(tiempo_pasado % 7)
 	if tiempo_pasado % 7 == 0: #entramos cada 7 frames para cambiar la font
 		if num > 3: 
 			num = 1 #reiniciamos el contador de las fonts
-		dynamic_font.font_data = load("res://Sprites/Font_pong"+String(num)+"-Regular.ttf")
+		dynamic_font.font_data = font[num-1]
 		dynamic_font.size = 64
 		puntos.set("custom_fonts/font", dynamic_font)
-		#print_debug("num=" + String(num))
 		num += 1
-	pass
 
 func _on_Porteria_area_entered(area):
-	p+=1
-	puntos.text= String(p)
+	p += 1
+	puntos.text = String(p)
+	
 	var s = sound.instance()
 	get_tree().current_scene.call_deferred("add_child",s)
+	
 	var c = confeti.instance()
 	c.global_position = area.global_position
 	get_tree().current_scene.call_deferred("add_child", c)
@@ -44,4 +42,3 @@ func _on_Porteria_area_entered(area):
 	else:
 		c.play()
 	c.connect("animation_finished",c,"queue_free")
-	pass # Replace with function body.
