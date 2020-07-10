@@ -1,5 +1,7 @@
 extends Node2D
 
+const countdown = preload("res://main_menu/countdown.tscn")
+
 onready var t = $Label
 onready var b1 = $Ball
 onready var b2 = $Ball2
@@ -21,7 +23,19 @@ func _ready():
 	
 func _process(_delta):
 	if Input.is_action_just_pressed("reset") and ended:
-		get_tree().change_scene("res://World.tscn")
+		var cd1 = countdown.instance()
+		get_tree().current_scene.add_child(cd1)
+		cd1.set_global_position(Vector2(612,240))
+		cd1.connect("start",self,"load_game")
+		
+		var cd2 = countdown.instance()
+		get_tree().current_scene.add_child(cd2)
+		cd2.set_global_position(Vector2(332,240))
+		
+		get_tree().get_root().find_node("WinScreen", true, false).queue_free()
 
 func end():
 	ended = true
+
+func load_game():
+	get_tree().change_scene("res://World.tscn")
